@@ -1,0 +1,238 @@
+.techfont{
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5em;
+    margin-bottom:10px
+}
+
+.bigbrand{
+    font-size: 1.5em;
+    color: white;
+}
+
+.centerstage{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  /* .loader {
+    filter:hue-rotate(0deg);
+    color:linear-gradient(45deg,#0f8,#08f);
+    animation:hue 10000ms infinite linear;
+   
+  } */
+
+  .postdate{
+    text-align: center;
+  }
+
+  .posttitle{
+    font-family: 'Russo One', sans-serif;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .postcontent{
+    font-family: 'Montserrat';
+    font-size: 1.5em; 
+  }
+
+  .btn-comment{
+    position: absolute;
+    right: 0px;
+  }
+
+  /* COLOR CHANGER */
+
+  @keyframes spinify {
+    0% {
+      transform: translate(0px,0px);
+      
+    }
+    33% {
+      transform: translate(0px,24px);
+      border-radius:100%;
+      width:10px;
+      height:10px;
+   
+    }
+     66% {
+      transform:translate(0px,-16px);
+    }
+    
+     88% {
+      transform:translate(0px,4px);
+       
+    }
+    100% {
+      transform:translate(0px,0px);
+    }
+  }
+  @keyframes hue{
+    0%{filter: hue-rotate(0deg);}
+    100%{filter:hue-rotate(360deg);}
+    
+  }
+
+
+/* #### */
+
+.nav-item, .nav-link{
+    color: white;
+  }
+
+  .nav-item .nav-link:hover {
+    background-color: #198754;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .navbar-nav .nav-link {
+    border-right: 1px solid #fff;
+    padding-right: 10px;
+  }
+  .navbar-nav .nav-link.active {
+    background-color: #198754;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .navbar-brand img {
+    padding-right: 2px;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 80px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .navbar-brand:hover, .navbar-brand:focus {
+    color: white; /* Maintain white text color on hover and focus */
+  }
+
+  .navbar {
+    background-image: url('../images/bgtrans.png'); /* Background image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for a lifted effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border to enhance the elevated look */
+    position: relative; /* Ensure positioning context for z-index */
+    z-index: 1050; /* Higher z-index to keep it above other elements */
+  }
+  
+  .container-background{
+    /* height: 100vh; Ensure the html and body elements take up the full height */
+    margin-top: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-image: url('../images/bgtrans.png'); /* Update with your image path */
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-repeat: repeat; /* Allows the image to repeat if it's smaller than the viewport */
+    background-size: cover; /* Keep the image's original size */
+    background-position: top left; /* Position the image at the top left corner */
+    background-attachment: fixed;
+    border: 10px solid black; /* Keeps the background image fixed in place while scrolling */
+    height: fit-content;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+  }
+
+  .carousel-container{
+    padding-left:10px;
+    background-color: white;
+ 
+  }
+
+  
+  .content-wrapper {
+    background-color: white; /* White background for the content area */
+    margin-left: 120px; /* Center the content horizontally */
+    margin-right: 120px; /* Center the content horizontally */
+    padding: 20px; /* Add padding around the content */
+    max-width: 100%; /* Optional: Limit the max width of the content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for a floating effect */
+    /* height: 1200px; */
+    margin-bottom: 0;
+    flex:1;
+    padding-bottom: 4rem;
+
+  }
+  .carousel-caption h5{
+    color: black;
+    padding-top: 0;
+    margin-top: 0; 
+    background-color: white ;
+    max-width: 60%;
+    margin: auto;
+    margin-top: 0;
+  }
+
+  .carousel-inner{
+    max-width: 95%;
+    margin: auto;
+  }
+  .carousel-slide {
+    width: 20%; /*Adjust this value as needed */ 
+    height: auto;
+    display: block; /* Ensures the image does not exceed the container's width */
+    margin: 0 auto; /* Centers the image if the width is less than the container */
+  }
+ 
+  .blog_posts .row .container-background{
+    border: 10px solid black;
+  }
+
+.grid-marg-cover .col {
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+}
+.grid-marg-cover img {
+    width: 95%;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    border: 1px solid gray;
+
+}
+
+.cover-photo .col {
+  position: relative;
+  overflow: hidden; /* Hide any overflowed parts of the image */
+}
+
+.cover-photo-img {
+  width: 95%; /* Make image fit the container width */
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Cover the area without distorting aspect ratio */
+  display: block;
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.cover-photo-link {
+  display: block; /* Ensure link takes up the entire space */
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+
+/* Ensure the footer sticks to the bottom and overlays content */
+.footer-container footer {
+  padding: 1rem;
+  margin-left: 120px; /* Center the content horizontally */
+  margin-right: 120px; /* Center the content horizontally */
+  /* border-top: 1px solid #dee2e6; */
+}
+
+
+
+footer ul.nav {
+  margin-bottom: 0; /* Reset bottom margin */
+}
+
+footer p {
+  margin: 0; /* Reset bottom margin */
+  padding-bottom: 0; /* Reset padding */
+}
