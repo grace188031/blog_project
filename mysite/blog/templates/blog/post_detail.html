@@ -1,0 +1,56 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+ <h1 class="posttitle loader">{{post.title}}  </h1> 
+    <div class="postimage">
+    {% if post.image %}
+        <div class="container-fluid">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    </div>
+    {% endif %}
+    {% if post.published_date %}
+        <div class="date postdate">
+            {{ post.published_date }}
+        </div>
+    {% else %}
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+    {% endif %}
+        
+    
+        <p class="postcontent">{{ post.text|safe|linebreaksbr }}</p>
+
+    {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}">
+            <i class="bi bi-pencil"></i> Edit
+        </a>
+        <a class="btn btn-primary" href="{% url 'post_remove' pk=post.pk %}">
+            <i class="bi bi-trash"></i> Delete
+        </a>
+    {% endif %}
+
+    <hr>
+    <a class="btn btn-primary btn-comment" href="{% url 'add_comment_to_post' pk=post.pk %}">Add Comment</a>
+
+    <div class="container">
+        {% for comment in post.comments.all %}
+        <br>
+            {% if user.is_authenticated or comment.approved_comment %}
+            {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
+                    <i class="bi bi-pencil"></i>Remove
+                </a>
+                <a class="btn btn-primary" href="{% url 'comment_approve' pk=comment.pk %}">
+                    <i class="bi bi-check-circle"></i>Approve
+                </a>
+            {% endif %}
+                <p>{{comment.text|safe|linebreaks}}</p>
+                <p>Posted By: {{comment.author}}</p>
+
+            {% endif %}
+            {% empty %}
+                <p>No Comments</p>
+        {% endfor %}
+    </div>
+{% endblock content %}
