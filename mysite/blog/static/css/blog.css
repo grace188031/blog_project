@@ -236,3 +236,27 @@ footer p {
   margin: 0; /* Reset bottom margin */
   padding-bottom: 0; /* Reset padding */
 }
+
+.container-fluid.cover-blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Optional: set a max width for the container */
+  max-width: 100%;
+}
+
+.centered-image {
+  max-width: 100%;
+  height: auto;
+  /* Optional: Set a specific width if needed */
+  width: 50%; /* Adjust this value as needed */
+}
+
+.ql-snow .ql-code-block {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto; /* Allow horizontal scroll if code is too long */
+}

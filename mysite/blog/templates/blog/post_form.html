@@ -4,11 +4,14 @@
  <h1>New Post</h1>
  <form class="post-form" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+    {{ form.media }}
     {{ form.as_p }}
+   
+   
     <button type="submit" class="save btn btn-default" name="button">Save</button>
  </form> 
 
- <script>
+ <!-- <script>
     var editor = new MediumEditor('.editable');
- </script>
+ </script> -->
 {% endblock content %}

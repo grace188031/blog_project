@@ -9,6 +9,8 @@ from django.utils import timezone
 from blog.forms import PostForm,CommentForm,Post
 
 
+
+
 # Create your views here.
 
 
@@ -26,6 +28,12 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+    # def get(self, request, *args, **kwargs):
+    #     post = self.get_object()
+    #     print(post.text)  # This will print the content of the QuillField to the console
+    #     return super().get(request, *args, **kwargs)
+    # def form(request):
+    #     return render(request, 'blog/post_detail.html', {'form': PostForm()})
 
 class CreatePostView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
@@ -98,3 +106,9 @@ def comment_remove(request,pk):
     comment.delete()
     return redirect('post_detail',pk=post_pk)
 
+
+# def model_form_view(request):
+#     return render(request, 'form_view.html', {'form': PostForm()})
+
+# def form(request):
+#     return render(request, 'form.html', {'form': QuillFieldForm()})

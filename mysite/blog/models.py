@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django_quill.fields import QuillField
+
 
  
 # Create your models here.
@@ -10,7 +12,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = QuillField('')
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
     image = models.ImageField(upload_to='cover_photo', blank=True, null=True)  # ImageField for uploading images
